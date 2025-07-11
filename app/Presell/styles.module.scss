@@ -1,0 +1,343 @@
+.container {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.banner {
+  width: 100%;
+  height: 80vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/images/sell.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.bannerContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+
+  h1 {
+    font-size: 54px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    max-width: 1200px;
+    font-family: "Bree", sans-serif;
+  }
+  p {
+    font-size: 20px;
+    max-width: 500px;
+    line-height: 1.6;
+    font-family: Barlow;
+  }
+}
+
+.servicesSection {
+  background-color: #f7f8f6;
+}
+
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    font-family: Barlow;
+    text-align: justify;
+  }
+}
+
+.quote {
+  font-style: italic;
+  font-size: 28px;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: "Bree", sans-serif;
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
+.serviceCard {
+  flex: 1;
+  min-width: 300px;
+  padding: 30px;
+  h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #6d6d75;
+    font-family: "Bree", sans-serif;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    font-family: Barlow;
+    text-align: justify;
+  }
+}
+
+.connectSection {
+  padding: 60px 0;
+  text-align: center;
+  h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #6d6d75;
+    font-family: "Bree", sans-serif;
+    span {
+      font-style: italic;
+      color: #6d6d75;
+    }
+  }
+  p {
+    font-size: 18px;
+    margin-bottom: 60px;
+    color: #333;
+    font-family: Barlow;
+  }
+}
+
+.contactForm {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: left;
+
+  .formRow {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    margin-bottom: 10px;
+
+    .formGroup {
+      flex: 1;
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 500;
+        color: #333;
+        font-size: 16px;
+        font-family: "Bree", sans-serif;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 15px 0;
+        font-size: 16px;
+        border: none;
+        border-bottom: 1px solid #999;
+        background-color: #f9f9f9;
+        color: #333;
+        border-radius: 3px 3px 0 0;
+        padding-left: 8px;
+        font-family: Barlow;
+
+        &:focus {
+          outline: none;
+          border-color: #d44942;
+          border-bottom-width: 2px;
+          background-color: #fff8f8;
+        }
+
+        &::placeholder {
+          color: #888;
+          font-style: italic;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 100px;
+        border: 1px solid #999;
+        border-radius: 3px;
+        padding: 8px;
+
+        &:focus {
+          border-color: #d44942;
+          border-width: 1px;
+        }
+      }
+
+      select {
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M7%2010L0%203h14z%22%2F%3E%3C%2Fsvg%3E");
+        background-repeat: no-repeat;
+        background-position: right 8px center;
+        background-size: 10px;
+        padding-right: 30px;
+
+        &:focus {
+          background-color: #fff8f8;
+        }
+      }
+    }
+  }
+
+  .checkboxGroup {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+
+    input[type="checkbox"] {
+      margin-top: 4px;
+      accent-color: #d44942;
+      width: 18px;
+      height: 18px;
+    }
+
+    label {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555;
+      font-family: Barlow;
+    }
+  }
+
+  .privacyLink {
+    color: #b78d58;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .submitButton {
+    background-color: transparent;
+    color: #b78d58;
+    border: none;
+    padding: 15px 40px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0 0 0 auto;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    border-radius: 3px;
+    font-family: "Bree", sans-serif;
+
+    .arrow {
+      margin-left: 10px;
+      font-size: 18px;
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      background-color: darken(#b78d58, 10%);
+      color: white;
+
+      .arrow {
+        transform: translateX(5px);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 500px;
+  }
+
+  .bannerContent {
+    padding-inline: 20px;
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      max-width: 100%;
+    }
+  }
+
+  .intro {
+    padding: 0 15px;
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .quote {
+    font-size: 22px;
+    padding: 0 15px;
+  }
+
+  .services {
+    flex-direction: column;
+    padding: 0 15px 20px;
+  }
+
+  .serviceCard {
+    min-width: 100%;
+    padding: 20px 15px;
+  }
+
+  .connectSection {
+    padding: 40px 20px;
+
+    h2 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .contactForm {
+    padding: 0 15px;
+
+    .formRow {
+      flex-direction: column;
+      gap: 20px !important;
+    }
+
+    .submitButton {
+      margin: 15px auto;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .checkboxGroup label {
+      font-size: 13px;
+    }
+  }
+}

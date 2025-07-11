@@ -1,0 +1,294 @@
+.container {
+  padding-top: 120px;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+
+  .section {
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    p {
+      color: #b78d58;
+      font-size: 1.1rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+  }
+
+  .loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #b78d58;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  .favoritesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .favoriteCard {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    .imageContainer {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background: #f0f0f0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .removeButton {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: white;
+        border: none;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 6px;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .propertyInfo {
+      padding: 1rem;
+
+      h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-family: Barlow, sans-serif;
+      }
+
+      .location {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #b78d58;
+        margin-bottom: 0.5rem;
+      }
+
+      .details {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .viewButton {
+        width: 100%;
+        padding: 0.75rem;
+        background: linear-gradient(90deg, #9c6d41 0%, #edca7b 100%);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        font-weight: 500;
+
+        &:hover {
+          background: linear-gradient(90deg, #b58b58 0%, #f0d294 100%);
+        }
+      }
+    }
+  }
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  h1 {
+    color: #b78d58;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+.accountInfo {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #575f60;
+    font-weight: 500;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #575f60;
+    background-color: #fff;
+
+    &:disabled {
+      background-color: #f5f5f5;
+      cursor: not-allowed;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #b78d58;
+    }
+
+    &::placeholder {
+      color: #999;
+    }
+  }
+}
+
+.disabledInput {
+  background-color: #f5f5f5 !important;
+  color: #999 !important;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+  margin-top: 30px;
+  width: 100%;
+
+  button {
+    flex: 1;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+}
+
+.editButton {
+  background: linear-gradient(90deg, #9c6d41 0%, #edca7b 100%);
+  color: white;
+  border: none;
+
+  &:hover {
+    background: linear-gradient(90deg, #b58b58 0%, #f0d294 100%);
+  }
+}
+
+.logoutButton {
+  background: #fff;
+  color: #ff4444;
+  border: 1px solid #ff4444;
+
+  &:hover {
+    background: #fff5f5;
+  }
+}
+
+.saveButton {
+  background: linear-gradient(90deg, #9c6d41 0%, #edca7b 100%);
+  color: white;
+  border: none;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(90deg, #b58b58 0%, #f0d294 100%);
+  }
+}
+
+.cancelButton {
+  background: #f5f5f5;
+  color: #575f60;
+  border: none;
+
+  &:hover {
+    background: #eee;
+  }
+}
+
+.loadingSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

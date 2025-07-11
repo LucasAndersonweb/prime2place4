@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Garantir que os componentes internos não ultrapassem os limites */
+  > * {
+    width: 100%;
+    margin: 0 auto; /* Centraliza o conteúdo */
+  }
+
+  /* Ajuste global do layout para dispositivos móveis */
+  @media screen and (max-width: 1024px) {
+    > * {
+      padding: 0 20px; /* Adiciona padding lateral */
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    > * {
+      padding: 0 10px; /* Reduz padding para telas menores */
+    }
+  }
+
+  /* Ajuste de altura mínima para componentes */
+  main {
+    flex: 1; /* Faz o conteúdo principal ocupar todo o espaço disponível */
+  }
+}

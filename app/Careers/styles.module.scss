@@ -1,0 +1,33 @@
+/* Modal Overlay (fundo escuro) */
+.modalOverlay {
+  position: fixed; // Garante que o modal ocupe a tela inteira
+  top: 0;
+  left: 0;
+  width: 100vw; // Full screen
+  height: 100vh;
+
+  background: transparent; // Remove o fundo preto
+  z-index: 1000; // Garante que o modal esteja na frente
+}
+
+.modalContent {
+  position: relative;
+  background: transparent; // Garante que o conteúdo também não tenha fundo
+  z-index: 1001;
+}
+
+/* Botão de Fechar */
+.closeModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+
+  &:hover {
+    color: #f0f0f0;
+  }
+}

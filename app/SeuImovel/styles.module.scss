@@ -1,0 +1,53 @@
+.container {
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.heroImage {
+  width: 100%; // A imagem ocupará a largura completa do container
+  height: auto; // Mantém a proporção da imagem
+  object-fit: cover; // Ajusta a imagem corretamente
+}
+
+.textOverlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 2rem;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Adicione media queries para responsividade */
+@media (max-width: 768px) {
+  .textOverlay {
+    font-size: 1.5rem; // Reduz o tamanho do texto em telas menores
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .heroWrapper {
+    padding: 0 10px; // Adiciona padding lateral em dispositivos móveis
+  }
+}
+
+@media (max-width: 480px) {
+  .textOverlay {
+    font-size: 1.2rem; // Ajuste adicional para telas muito pequenas
+    bottom: 5px;
+    left: 5px;
+  }
+}

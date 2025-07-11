@@ -1,0 +1,792 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.heroSection {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 50px;
+  background-image: url("/Rent.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.99));
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.heroTitle {
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 1.2;
+  max-width: 1200px;
+
+  font-family: "Bree", sans-serif;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2.5rem;
+  }
+}
+
+.exploreButton {
+  margin-top: 2rem;
+  background-color: #b78d58;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #c9a06d;
+    transform: translateY(-2px);
+  }
+
+  .arrowIcon {
+    margin-left: 8px;
+    font-size: 1.2rem;
+  }
+}
+
+.regionsSection {
+  width: 100%;
+  padding: 5rem 0 7rem 0;
+  position: relative;
+  z-index: 2;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  margin-bottom: -50px;
+  background-color: #f8f9fa;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(248, 249, 250, 1) 25%,
+      rgba(248, 249, 250, 1) 45%,
+      rgba(248, 249, 250, 0.95) 60%,
+      rgba(248, 249, 250, 0.9) 70%,
+      rgba(248, 249, 250, 0.8) 80%,
+      rgba(248, 249, 250, 0.65) 90%,
+      rgba(248, 249, 250, 0.5) 100%
+    );
+    z-index: 1;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+  }
+}
+
+.regionsBgImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.6s ease, background-image 1.2s ease;
+  z-index: 0;
+
+  @media (max-width: 992px) {
+    width: 100%;
+    opacity: 0.15;
+    background-position: center;
+  }
+}
+
+.hiddenBackground {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.regionsSectionContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
+}
+
+.regionsLeftColumn {
+  width: 100%;
+  padding-right: 20px;
+
+  @media (max-width: 992px) {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+
+.regionsRightColumn {
+  width: 60%;
+  position: relative;
+
+  @media (max-width: 992px) {
+    display: none; // Ocultar a coluna direita em telas menores
+  }
+}
+
+.regionsHeader {
+  margin-bottom: 2rem;
+  color: #b78d58;
+
+  @media (max-width: 768px) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.regionsTitle {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #b78d58;
+  margin: 0 0 0.5rem 0;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.regionsSubtitle {
+  font-size: 1.2rem;
+  color: #64748b;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.regionsList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  position: relative;
+  z-index: 2;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.regionCard {
+  background-color: white;
+  border-radius: 4px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  h3 {
+    color: #b78d58;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .arrowIcon {
+    color: #b78d58;
+    font-size: 1.2rem;
+  }
+}
+
+.activeCard {
+  background-color: #b78d58;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+
+  h3 {
+    color: white;
+  }
+
+  .arrowIcon {
+    color: white;
+  }
+}
+
+.featuredPropertiesSection {
+  width: 100%;
+  padding: 5rem 0;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  padding-top: 7rem;
+}
+
+.featuredPropertiesContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.featuredPropertiesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.featuredPropertiesTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #b78d58;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.filtersButton {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #b78d58;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    background-color: #f8f9fa;
+  }
+
+  .filterIcon {
+    margin-left: 8px;
+    font-size: 1.2rem;
+  }
+}
+
+.loadingContainer {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+}
+
+.propertiesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.propertyCard {
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: translateY(-2px);
+  }
+}
+
+.propertyImageContainer {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.propertyImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.forSaleTag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #b78d58;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.propertyBrand {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.propertyDetails {
+  padding: 20px;
+}
+
+.propertyPrice {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #b78d58;
+  margin: 0 0 8px 0;
+}
+
+.propertyAddress {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 12px 0;
+}
+
+.propertySpecs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #64748b;
+
+  span {
+    display: flex;
+    align-items: center;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #d1d5db;
+      margin-left: 15px;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+}
+
+// Luxury Properties Section
+.luxuryPropertiesSection {
+  width: 100%;
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+  position: relative;
+  z-index: 1;
+}
+
+.luxuryPropertiesContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.luxuryHeader {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.luxuryTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #b78d58;
+  margin: 0 0 0.5rem 0;
+  text-align: left;
+}
+
+.luxurySubtitle {
+  font-size: 1.2rem;
+  color: #64748b;
+  margin: 0;
+  text-align: left;
+}
+
+.luxuryCarouselContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.luxuryCarousel {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+.luxuryPropertyCard {
+  flex: 0 0 calc(33.333% - 14px);
+  margin-right: 0;
+  overflow: hidden;
+  background-color: white;
+  transition: transform 0.3s ease;
+  position: relative;
+
+  @media (max-width: 1024px) {
+    flex: 0 0 calc(50% - 10px);
+  }
+
+  @media (max-width: 768px) {
+    flex: 0 0 100%;
+  }
+}
+
+.luxuryImageContainer {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+
+.luxuryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.luxuryBrand {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 5px 15px;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.luxurySaleTag {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #b78d58;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.luxuryRLSTag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1;
+  height: 30px;
+}
+
+.luxuryPrice {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 8px 0;
+}
+
+.luxuryAddress {
+  font-size: 1rem;
+  color: #333;
+  margin: 0 0 12px 0;
+  font-weight: 400;
+}
+
+.luxuryDetails {
+  padding: 20px;
+}
+
+.luxurySpecs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748b;
+  margin-top: 12px;
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+
+  span {
+    display: flex;
+    align-items: center;
+
+    &::after {
+      content: "•";
+      margin: 0 8px;
+      color: #ccc;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+}
+
+.carouselButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.carouselButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #f8f9fa;
+    border-color: #ccc;
+  }
+}
+
+.viewAllButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 25px;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #b78d58;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 30px;
+
+  &:hover {
+    background-color: #f8f9fa;
+  }
+}
+
+.viewAllContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+// Contact Section
+.contactSection {
+  width: 100%;
+  padding: 5rem 0;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/exclusividadeprime.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.contactContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactTextSection {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.contactTitle {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contactSubtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 1rem 0;
+  max-width: 600px;
+}
+
+.contactFormContainer {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formField {
+  width: 100%;
+}
+
+.formInput,
+.formSelect,
+.formTextarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #b78d58;
+  transition: border-color 0.2s ease;
+  outline: none;
+  background-color: white;
+
+  &:focus {
+    border-color: #b78d58;
+    box-shadow: 0 0 0 1px #b78d58;
+  }
+
+  &::placeholder {
+    color: #a0aec0;
+  }
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.formCheckbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+
+.checkboxLabel {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.policyLink {
+  color: #b78d58;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.submitButton {
+  padding: 12px 30px;
+  background-color: #b78d58;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
+  width: 100%;
+
+  &:hover {
+    background-color: #c9a06d;
+  }
+}
