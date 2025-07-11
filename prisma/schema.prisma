@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model AccessLog {
+  id          Int        @id @default(autoincrement())
+  userId      Int?
+  ip          String
+  city        String?
+  browser     String
+  deviceType  DeviceType
+  isIphone    Boolean
+  createdAt   DateTime   @default(now())
+  deviceBrand String?
+  deviceModel String?
+  user        User?      @relation(fields: [userId], references: [id])
+
+  @@index([userId], map: "AccessLog_userId_fkey")
+}
+
+model User {
+  id          Int                @id @default(autoincrement())
+  name        String?
+  email       String             @unique
+  password    String
+  image_url   String?
+  role        Role               @default(SUBSCRIBER)
+  phoneNumber String?
+  createdAt   DateTime           @default(now())
+  AccessLog   AccessLog[]
+  favorites   FavoriteProperty[]
+
+  @@index([role], map: "User_role_fkey")
+}
+
+model FavoriteProperty {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  propertyId String
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id])
+
+  @@unique([userId, propertyId])
+  @@index([userId])
+}
+
+enum Role {
+  SUBSCRIBER
+  ADMIN
+}
+
+enum DeviceType {
+  MOBILE
+  DESKTOP
+}
